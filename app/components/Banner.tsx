@@ -6,7 +6,12 @@ const SlidingBanner = () => {
     <div className="bg-black text-white overflow-hidden whitespace-nowrap relative">
       <div className="animate-slide inline-block">
         <p className="py-1 px-4 inline-block">
-          This product is intended for Nicotine Replacement Therapy, please use responsibly! • 
+          This product is intended for Nicotine Replacement Therapy, please use responsibly!
+          
+          
+           • 
+
+
           Zing contains nicotine which is addictive • Do not promote Zing to minors
         </p>
 
@@ -33,7 +38,11 @@ const SlidingBanner = () => {
 
         </p>
         <p className="py-1 px-4 inline-block">
-          This product is intended for Nicotine Replacement Therapy, please use responsibly! • 
+          This product is intended for Nicotine Replacement Therapy, please use responsibly! 
+          
+          • 
+
+          
           Zing contains nicotine which is addictive • Do not promote Zing to minors
         </p>
       </div>
