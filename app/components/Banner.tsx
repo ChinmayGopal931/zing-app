@@ -21,18 +21,18 @@ const SlidingBanner = () => {
 
         <p className="py-1 px-4 inline-block">
 
-</p>
+        </p>
 
-<p className="py-1 px-4 inline-block">
+        <p className="py-1 px-4 inline-block">
 
-</p>
+        </p>
 
-<p className="py-1 px-4 inline-block">
+        <p className="py-1 px-4 inline-block">
 
-</p>
-<p className="py-1 px-4 inline-block">
+        </p>
+        <p className="py-1 px-4 inline-block">
 
-</p>
+        </p>
 
         <p className="py-1 px-4 inline-block">
 
@@ -42,7 +42,7 @@ const SlidingBanner = () => {
           
           • 
 
-          
+
           Zing contains nicotine which is addictive • Do not promote Zing to minors
         </p>
       </div>

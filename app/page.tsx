@@ -46,9 +46,33 @@ export default function LandingPage() {
                 <p className="text-lg text-gray-600 mt-6 max-w-md">
                   Experience the future of nicotine consumption with our premium, tobacco-free pouches.
                 </p>
+                {/* Add Waitlist Button */}
+                <div className="pt-6">
+                  <Link 
+                    href="/contact" 
+                    className="inline-flex items-center px-6 py-3 text-lg font-medium text-white bg-black rounded-lg hover:bg-gray-800 transition-all duration-200 transform hover:scale-105"
+                  >
+                    <span>Join the Waitlist</span>
+                    <svg 
+                      className="w-5 h-5 ml-2" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M9 5l7 7-7 7" 
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
+
             <div className="flex justify-center animate-fade-in-delayed">
+            <div className="relative">
               <Image
                 src="/logo.svg"
                 alt="ZING Mint Nicotine Pouches"
@@ -57,6 +81,16 @@ export default function LandingPage() {
                 className="w-full max-w-lg drop-shadow-2xl"
                 priority
               />
+              <div className="absolute -top-4 -right-1 md:-top-6 md:-right-0">
+                <Image
+                  src="/comingsoon.svg"
+                  alt="Coming Soon"
+                  width={120}
+                  height={1200}
+                  className="w-20 h-20 md:w-28 md:h-28 object-contain animate-bounce"
+                />
+              </div>
+            </div>
             </div>
           </div>
         </div>
