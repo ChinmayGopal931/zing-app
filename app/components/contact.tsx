@@ -1,12 +1,9 @@
 'use client'
 
-
 import { useState } from 'react'
 import { Alert, AlertDescription } from '@/components/ui/alert'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Smile, Loader2 } from 'lucide-react'
 
-export default function ContactForm() {
+export  function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -57,105 +54,90 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="w-full max-w-xl mx-auto">
-      <CardHeader className="text-center space-y-1">
-        <CardTitle className="text-3xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-          Join the Waitlist
-        </CardTitle>
-        <p className="text-gray-500">
-          Be the first to know when we launch ZING nicotine pouches
-        </p>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium mb-1.5">
-                Name<span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                placeholder="Your full name"
-                required
-              />
-            </div>
+    <div className="bg-sky-50 p-8 rounded-lg">
+      <h2 className="text-3xl font-bold mb-4">ZING launch!</h2>
+      <p className="text-gray-600 mb-6">
+        Be the first to know when we launch ZING nicotine pouches :)
+      </p>
 
-            <div>
-              <label className="block text-sm font-medium mb-1.5">
-                Email<span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                placeholder="you@example.com"
-                required
-              />
-            </div>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <label className="block mb-1">
+            Name<span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            className="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none"
+            placeholder="Name"
+            required
+          />
+          <p className="text-sm text-gray-500 mt-1">Your name</p>
+        </div>
 
-            <div>
-              <label className="block text-sm font-medium mb-1.5">Phone</label>
-              <div className="flex gap-2">
-                <select
-                  value={formData.countryCode}
-                  onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
-                  className="w-24 px-3 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                >
-                  <option value="+91">🇮🇳 +91</option>
-                </select>
-                <input
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="flex-1 px-4 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                  placeholder="Your phone number"
-                />
-              </div>
-              <p className="text-sm text-gray-500 mt-1.5">
-                We'll text you when ZING launches
-              </p>
-            </div>
+        <div>
+          <label className="block mb-1">
+            Email<span className="text-red-500">*</span>
+          </label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            className="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none"
+            placeholder="Email"
+            required
+          />
+          <p className="text-sm text-gray-500 mt-1">
+            Provide your email address to know when ZING launches. For e.g abc@xyz.com
+          </p>
+        </div>
+
+        <div>
+          <label className="block mb-1">Phone</label>
+          <div className="flex gap-2">
+            <select
+              value={formData.countryCode}
+              onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
+              className="w-24 p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none"
+            >
+              <option value="+91">🇮🇳 +91</option>
+            </select>
+            <input
+              type="tel"
+              value={formData.phone}
+              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              className="flex-1 p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none"
+              placeholder="Phone"
+            />
           </div>
+          <p className="text-sm text-gray-500 mt-1">Text me when ZING launches</p>
+        </div>
 
-          <button
-            type="submit"
-            disabled={status.loading}
-            className="w-full bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70"
-          >
-            {status.loading ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                <span>Joining waitlist...</span>
-              </>
-            ) : (
-              <>
-                <Smile className="w-5 h-5" />
-                <span>Join the Waitlist</span>
-              </>
-            )}
-          </button>
+        <button
+          type="submit"
+          disabled={status.loading}
+          className="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 transition-colors disabled:opacity-50"
+        >
+          {status.loading ? 'Submitting...' : 'Alert me on launch 😎'}
+        </button>
 
-          {status.success && (
-            <Alert className="bg-green-50 border-green-200 animate-fade-in">
-              <AlertDescription className="text-green-800">
-                You're on the list! We'll keep you updated about the launch.
-              </AlertDescription>
-            </Alert>
-          )}
+        {status.success && (
+          <Alert className="bg-green-50 border-green-200">
+            <AlertDescription className="text-green-800">
+              Thanks for subscribing! We'll keep you updated about the launch.
+            </AlertDescription>
+          </Alert>
+        )}
 
-          {status.error && (
-            <Alert className="bg-red-50 border-red-200 animate-fade-in">
-              <AlertDescription className="text-red-800">
-                {status.error}
-              </AlertDescription>
-            </Alert>
-          )}
-        </form>
-      </CardContent>
-    </Card>
+        {status.error && (
+          <Alert className="bg-red-50 border-red-200">
+            <AlertDescription className="text-red-800">
+              {status.error}
+            </AlertDescription>
+          </Alert>
+        )}
+      </form>
+    </div>
   )
 }
