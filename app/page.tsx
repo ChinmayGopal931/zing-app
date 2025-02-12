@@ -185,10 +185,6 @@ const platforms = [
     logo: "/tata.svg",
   },
   {
-    name: "India Mart",
-    logo: "/indiamart.svg",
-  },
-  {
     name: "Flipkart",
     logo: "/flipkart.svg",
   },
